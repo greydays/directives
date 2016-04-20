@@ -8,13 +8,15 @@ module.exports = function(app) {
       replace: true,
       templateUrl: '/html/cats.html',
       scope: {
-        save: '&',
-        buttonText: '=',
-        labelText: '@',
-        note: '='
-      },
-      transclude: true
+        miceCaught: '='
+        },
+      transclude: true,
+      controller: function($scope) {
+        $scope.miceCatch = function() {
+          $scope.miceCaught += 1;
+        };
+      }
     };
   });
-};
 
+};

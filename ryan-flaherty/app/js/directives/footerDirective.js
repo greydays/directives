@@ -1,20 +1,19 @@
-'use strict';
+ 'use strict';
 
 module.exports = function(app) {
 
-  app.directive('footer', function() {
+  app.directive('footDir', function() {
     return {
-      restrict: 'A',
+      restrict: 'E',
       replace: true,
-      template: '<footer><h1>LOOK AT ME</h1><h2>I\'m a directive too!</h2></footer>',
-      scope: {
-        save: '&',
-        buttonText: '=',
-        labelText: '@',
-        note: '='
+      template: '<footer><h1>CLICK ME</h1><h2>I\'m a directive too!</h2></footer>',
+      link: function($scope, element, attrs) {
+        element.on('click', function() {
+          element.css('color', 'red')
+        });
       },
       transclude: true
     };
   });
-};
 
+};

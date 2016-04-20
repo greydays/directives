@@ -8,10 +8,16 @@
   </head>
   <body data-ng-app="app">
     <section header></section>
-    <main ng-view>
-      <p>Hello World!</p>
+    <main>
+      <div data-ng-show="clicked">
+        <clicked-dir></clickec-dir>
+      </div>
+      <button class="click-butt" data-ng-hide="clicked" data-ng-click="clicked=true">CLICK ME</button>
+      <dogs-dir dog-atr="'fuzzy'">
+      and adorable</dogs-dir>
+      <div cats-dir mice-caught="0"></div>
     </main>
-    <section footer></section>
+    <foot-dir></foot-dir>
     <script src="bundle.js"></script>
   </body>
 </html>
